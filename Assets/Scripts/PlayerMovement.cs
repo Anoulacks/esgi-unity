@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 3;
     float movementDirection = 0;
 
-    bool isJumping;
     bool isGrounded;
 
     enum MovementStateEnum { idle, running, jumping, falling }
@@ -43,13 +42,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
+
         if ( Input.GetKeyDown("space") && isGrounded) {
-            isJumping = true;
+            Jump();
         }
     }
 
     void FixedUpdate() {
-
+        movementDirection = Input.GetAxis("Horizontal");
         UpdateAnimation();
 
         rb.velocity = new Vector2(movementDirection * speed, rb.velocity.y);
