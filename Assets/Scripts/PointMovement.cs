@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlatFormMovement : MonoBehaviour
+public class PointMovement : MonoBehaviour
 {   [SerializeField] private GameObject[] points;
     private int index = 0;
     [SerializeField] private float speed = 2f;
