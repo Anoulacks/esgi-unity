@@ -19,4 +19,9 @@ public class PopupManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Resume()
+    {
+        gameObject.SetActive(false);
+    }
 }

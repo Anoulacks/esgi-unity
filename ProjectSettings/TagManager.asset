@@ -8,6 +8,7 @@ TagManager:
   - CoinTag
   - TrapTag
   - EnemyTag
+  - BulletTag
   layers:
   - Default
   - TransparentFX
