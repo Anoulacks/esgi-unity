@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public GameObject player;
-    SpriteRenderer spriteRenderer;
     Animator animator;
     public float jumpForce = 7;
     public float speed = 3;
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
@@ -79,10 +77,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementDirection == 1) {
             state = MovementStateEnum.running;
-            spriteRenderer.flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         } else if (movementDirection == -1){
             state = MovementStateEnum.running;
-            spriteRenderer.flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         } else {
             state = MovementStateEnum.idle;
         }
