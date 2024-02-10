@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        movementDirection = Input.GetAxis("Horizontal");
+        movementDirection = Input.GetAxisRaw("Horizontal");
         UpdateAnimation();
 
         rb.velocity = new Vector2(movementDirection * speed, rb.velocity.y);
