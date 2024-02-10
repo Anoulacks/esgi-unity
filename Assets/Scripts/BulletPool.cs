@@ -5,13 +5,15 @@ using UnityEngine;
 public class BulletPool : MonoBehaviour
 {
     [SerializeField] private uint initPoolSize;
-    public uint InitPoolSize => initPoolSize;
     [SerializeField] private Transform shootingPoint;
     [SerializeField] private float speed;
     [SerializeField] private Bullet bullet;
 
     // Stack qui gère le pool
     private Stack<Bullet> stack;
+
+    public delegate void BulletShootDelegate();
+    public static event BulletShootDelegate OnShoot;
 
 
     private void Start() {
@@ -80,6 +82,7 @@ public class BulletPool : MonoBehaviour
 
             // Appliquer une force à la balle
             bulletObject.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            OnShoot?.Invoke();
         }
     }
 

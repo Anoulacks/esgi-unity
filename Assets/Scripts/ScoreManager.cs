@@ -10,16 +10,16 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private void OnEnable()
     {
-        // Souscrire à un Abonnement
+        // Souscrire à un abonnement
         Enemy.OnEnemyDeath += Increment;
-        ItemTarget.OnItemCollected += Increment;
+        Coin.OnCoinCollected += Increment;
     }
 
     private void OnDisable()
     {
         // Se désabonner
         Enemy.OnEnemyDeath -= Increment;
-        ItemTarget.OnItemCollected -= Increment;
+        Coin.OnCoinCollected -= Increment;
     }
 
     public void Increment() {

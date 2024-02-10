@@ -7,8 +7,12 @@ public class Finish : MonoBehaviour
 {
     public GameObject popup;
 
+    public delegate void FinishDelegate();
+    public static event FinishDelegate OnFinish;
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.name == "Player") {
+            OnFinish?.Invoke();
             CompleteLevel();
         }
     }
