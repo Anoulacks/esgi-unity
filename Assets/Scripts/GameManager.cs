@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // La seule instance du GameManager
+    public static GameManager gameManager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Awake() {
+        // Permet que le Game Manager persiste entre les scènes
+        DontDestroyOnLoad(gameObject);
+
     }
 }
