@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour
             collider.GetComponent<Enemy>().Die();
         }
 
+        if (collider.CompareTag("PlayerTag")) {
+            collider.GetComponent<PlayerDeath>().Die();
+        }
+
         Release();
     }
 

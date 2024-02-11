@@ -79,6 +79,8 @@ MonoBehaviour:
   shootingPoint: {fileID: 6843282146765241550}
   speed: 10
   bullet: {fileID: -1645637194035031418, guid: 8ac8d2dadeeb7414586ffce94c289dd2, type: 3}
+  autoShoot: 0
+  autoShootInterval: 0
 --- !u!1 &8945927717136651306
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +99,7 @@ GameObject:
   - component: {fileID: 282636447328880141}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PlayerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,9 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446f9f2eb26ba431b8512b53c14300cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  player: {fileID: 8945927717136651306}
-  jumpForce: 10
+  jumpForce: 12
   speed: 6
 --- !u!95 &3621866924058285902
 Animator:

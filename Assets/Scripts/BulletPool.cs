@@ -8,6 +8,8 @@ public class BulletPool : MonoBehaviour
     [SerializeField] private Transform shootingPoint;
     [SerializeField] private float speed;
     [SerializeField] private Bullet bullet;
+    [SerializeField] private bool autoShoot = false;
+    [SerializeField] private int autoShootInterval = 5;
 
     // Stack qui gère le pool
     private Stack<Bullet> stack;
@@ -18,6 +20,10 @@ public class BulletPool : MonoBehaviour
 
     private void Start() {
         SetupPool();
+
+        if (autoShoot) {
+            InvokeRepeating("Shoot", 1, autoShootInterval);
+        }
     }
 
     // Création du pool
@@ -65,7 +71,7 @@ public class BulletPool : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyUp(KeyCode.C)) {
+        if (Input.GetKeyUp(KeyCode.C) && !autoShoot) {
             Shoot();
         }
     }
@@ -84,6 +90,10 @@ public class BulletPool : MonoBehaviour
             bulletObject.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
             OnShoot?.Invoke();
         }
+    }
+
+    private void OnDestroy() {
+        CancelInvoke("Shoot");
     }
 
 }

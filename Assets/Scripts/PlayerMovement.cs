@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public GameObject player;
+    private Rigidbody2D rb;
     Animator animator;
-    public float jumpForce = 7;
-    public float speed = 3;
+    [SerializeField] private float jumpForce = 7;
+    [SerializeField] private float speed = 3;
     float movementDirection = 0;
 
     bool isGrounded;

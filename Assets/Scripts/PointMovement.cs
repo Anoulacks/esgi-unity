@@ -4,7 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PointMovement : MonoBehaviour
-{   [SerializeField] private GameObject[] points;
+{   
+    [SerializeField] private GameObject[] points;
     private int index = 0;
     [SerializeField] private float speed = 2f;
     private void Update()
