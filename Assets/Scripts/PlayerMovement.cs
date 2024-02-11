@@ -46,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        movementDirection = Input.GetAxisRaw("Horizontal");
+        // à decommenter pour le déplacement au clavier
+        //movementDirection = Input.GetAxisRaw("Horizontal");
         UpdateAnimation();
 
         rb.velocity = new Vector2(movementDirection * speed, rb.velocity.y);

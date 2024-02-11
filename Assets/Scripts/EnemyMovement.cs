@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private GameObject[] points;
     [SerializeField] private bool isRunning = false;
-    private Rigidbody2D rb;
     private int index = 0;
     private float movementDirection = 0;
     Animator animator;
@@ -15,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
     enum MovementStateEnum { idle, running }
 
     void Start() {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
     private void Update()

@@ -57070,7 +57070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2001030811}
   m_Layer: 0
-  m_Name: Items
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57573,6 +57573,10 @@ PrefabInstance:
     - target: {fileID: 4604836888603726124, guid: 85f97054c8a1a4483b47ed3065bfdb4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893904178925028133, guid: 85f97054c8a1a4483b47ed3065bfdb4a, type: 3}
+      propertyPath: jumpForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8945927717136651306, guid: 85f97054c8a1a4483b47ed3065bfdb4a, type: 3}
       propertyPath: m_Name
